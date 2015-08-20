@@ -15,13 +15,13 @@ public class AddressBook {
       mFirstName = firstName;
       mLastName = lastName;
 
-      entries.add(this);
-      mId = entries.size();
+      // entries.add(this);
+      // mId = entries.size();
       mPhones = new ArrayList<Phone>();
       mAddresses = new ArrayList<Address>();
       mEmails = new ArrayList<Email>();
       mBirthdays = new ArrayList<Birthday>();
-      }
+    }
 
       public String getFirstName() {
         return mFirstName;
@@ -58,6 +58,11 @@ public class AddressBook {
       }
       public void addBirthday(Birthday birthday) {
         mBirthdays.add(birthday);
+      }
+
+      public void save() {
+        entries.add(this);
+        mId = entries.size();
       }
 
       public static void clear() {

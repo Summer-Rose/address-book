@@ -9,19 +9,56 @@ public class AddressBook {
     private ArrayList<Email> mEmails;
     private ArrayList<Birthday> mBirthdays;
 
-    private int mSize;
+    private int mId;
 
     public AddressBook(String firstName, String lastName) {
       mFirstName = firstName;
       mLastName = lastName;
-      mBirthMonth = birthMonth;
-      mBirthDay = birthDay;
 
       this.add(entries);
-      mSize = entries.size();
+      mId = entries.size();
       mPhones = new ArrayList<Phone>();
       mAddresses = new ArrayList<Address>();
       mEmails = new ArrayList<Email>();
       mBirthdays = new ArrayList<Birthday>();
       }
+
+      public String getFirstName() {
+        return mFirstName;
+      }
+      public String getLastName() {
+        return mLastName;
+      }
+      public ArrayList<Phone> getPhones() {
+        returns mPhones;
+      }
+      public ArrayList<Address> getAddresses() {
+        return mAddresses;
+      }
+      public ArrayList<Email> getEmails() {
+        return mEmails;
+      }
+      public ArrayList<Birthday> getBirthdays() {
+          return mBirthdays;
+      }
+      public int getId() {
+        return mId;
+      }
+      public ArrayList<AddressBook> all() {
+        return entries;
+      }
+      public void addPhone(Phone phone) {
+        mPhones.add(phone);
+      }
+      public void addAddress(Address address) {
+        mAddresses.add(address);
+      }
+      public void addEmail(Email email) {
+        mEmails.add(email);
+      }
+      public void addBirthday(Birthday birthday) {
+        mBirthdays.add(birthday);
+      }
+
+
 }

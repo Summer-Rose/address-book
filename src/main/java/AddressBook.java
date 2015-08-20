@@ -44,7 +44,7 @@ public class AddressBook {
       public int getId() {
         return mId;
       }
-      public ArrayList<AddressBook> all() {
+      public static ArrayList<AddressBook> all() {
         return entries;
       }
       public void addPhone(Phone phone) {

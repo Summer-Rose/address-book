@@ -1,16 +1,15 @@
 
-# _Vowel Replacement Puzzle_
+# _Address Book_
 
-_Description: A template for creating an app using Java. Template uses gradle to download all necessary dependencies._
+_Description: This address book let's users add a new person person and then edit several phone numbers, emails and addresses associated with that contact._
 _JUnit and FluentLenium are used for testing. Velocity is used to created web page templates. Spark is used to run the_
 _program on a local server._
 
 ## Project Setup
 
-1. Download zip file and update directory names to correspond to your project.
-2. _The dependencies of the project are in the build.gradle file. In order to install them enter 'gradle run' when you are in the base directory_
-3. _To install Gradle you will need to have HomeBrew (http://brew.sh/). You can then install Gradle with 'brew install gradle'_
-4. _After 'gradle run' the Spark server will be running, and the application can be viewd @ https://localhost:4567_
+1. _The dependencies of the project are in the build.gradle file. In order to install them enter 'gradle run' when you are in the base directory_
+2. _To install Gradle you will need to have HomeBrew (http://brew.sh/). You can then install Gradle with 'brew install gradle'_
+3. _After 'gradle run' the Spark server will be running, and the application can be viewd @ https://localhost:4567_
 
 ## Testing
 
@@ -18,5 +17,5 @@ _program on a local server._
 
 ## License
 
-_Author: Yelena Belikova_
+_Author: Yelena Belikova and Summer Brochtrup_
 # address-book

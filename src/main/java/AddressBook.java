@@ -15,7 +15,7 @@ public class AddressBook {
       mFirstName = firstName;
       mLastName = lastName;
 
-      this.add(entries);
+      entries.add(this);
       mId = entries.size();
       mPhones = new ArrayList<Phone>();
       mAddresses = new ArrayList<Address>();
@@ -30,7 +30,7 @@ public class AddressBook {
         return mLastName;
       }
       public ArrayList<Phone> getPhones() {
-        returns mPhones;
+        return mPhones;
       }
       public ArrayList<Address> getAddresses() {
         return mAddresses;
@@ -60,5 +60,16 @@ public class AddressBook {
         mBirthdays.add(birthday);
       }
 
+      public static void clear() {
+        entries.clear();
+      }
+
+      public static AddressBook find(int id) {
+        try {
+          return entries.get(id - 1);
+        } catch (IndexOutOfBoundsException exception) {
+          return null;
+        }
+      }
 
 }

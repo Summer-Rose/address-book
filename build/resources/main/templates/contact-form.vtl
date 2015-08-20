@@ -5,13 +5,9 @@
 <table class="table">
   <tbody>
     <tr>
-      <td><strong>Phone:</strong>
-        #if ($phone)
-          $contact.getPhones($id);
-        #end
-      </td>
+      <td><strong>Phone:</strong> 232-22222</td>
       <td>
-        <form action="/phone/$contact.getPhones().getId()" method="get">
+        <form action="" method="get">
           <button type="submit" class="btn btn-info">Update</button>
         </form>
       </td>

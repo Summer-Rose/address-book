@@ -20,8 +20,7 @@ public class App{
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
-      //model.put("contactList", contactList);
-
+      model.put("contactList", AddressBook.all());
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -33,10 +32,19 @@ public class App{
       String firstName = request.queryParams("firstName");
       String lastName = request.queryParams("lastName");
       AddressBook newAddressBook = new AddressBook(firstName, lastName);
-      contactList.add(newAddressBook);
-  
+      //contactList.add(newAddressBook);
+      newAddressBook.save();
       model.put("contactList", contactList);
       model.put("template", "templates/index.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/contact-form/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      AddressBook contact = AddressBook.find(Integer.parseInt(request.params(":id")));
+      model.put("contact", contact);
+      model.put("template", "templates/contact-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }

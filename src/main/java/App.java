@@ -20,7 +20,23 @@ public class App{
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
+      //model.put("contactList", contactList);
 
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/contacts", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      ArrayList<AddressBook> contactList = AddressBook.all();
+
+      String firstName = request.queryParams("firstName");
+      String lastName = request.queryParams("lastName");
+      AddressBook newAddressBook = new AddressBook(firstName, lastName);
+      contactList.add(newAddressBook);
+  
+      model.put("contactList", contactList);
+      model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
